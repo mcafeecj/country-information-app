@@ -1,6 +1,6 @@
-.vs/
-*.user
-*.suo
-*.vscode/
 bin/
 obj/
+node_modules/
+*.log
+.vs/
+.env

@@ -1,7 +1,7 @@
 # CountryInformationApp
 
 ## Project Overview
-With the Paris 2024 Olympics fresh in our mind, the CountryInformationApp is a web application that provides detailed information about countries using .NET 8 ASP.NET MVC Web API, Razor Pages, Bootstrap, and JavaScript/TypeScript.
+With the Paris 2024 Olympics still fresh on our minds, the CountryInformationApp is a web application that provides detailed information about countries using .NET 8 ASP.NET MVC Web API, Razor Pages, Bootstrap, and JavaScript/TypeScript.
 
 ## Features
 - Responsive design using Bootstrap

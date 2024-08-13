@@ -1,0 +1,12 @@
+{
+  "name": "CountryInformationApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mcafeecj/country-information-app.git",
+  "author": "Chris McAfee <chrismcafee24@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "5.3.3",
+    "sass": "^1.77.8"
+  }
+}
