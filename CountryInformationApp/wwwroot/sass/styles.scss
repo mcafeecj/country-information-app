@@ -1,3 +1,6 @@
+
+@import '_variables.scss';
+
 html {
     font-size: 14px;
 }
@@ -19,7 +22,17 @@ html {
 
 body {
     margin-bottom: 60px;
+
+    .navbar {
+        background-color: $primary;
+    }
+
+    .nav-link {
+        color: white !important;
+        font-weight: bold;
+    }
 }
+
 
 .loading-overlay {
     top: 0;
@@ -28,6 +41,7 @@ body {
     height: 100%;
     display: none;
     justify-content: center;
+    color: $light-gray;
 }
 
 .spinner-border {

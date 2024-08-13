@@ -19,9 +19,12 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-.test {
-  margin: 9px;
+body .navbar {
+  background-color: #1976d2;
+}
+body .nav-link {
+  color: white !important;
+  font-weight: bold;
 }
 
 .loading-overlay {
@@ -31,6 +34,7 @@ body {
   height: 100%;
   display: none;
   justify-content: center;
+  color: #d3d3d3;
 }
 
 .spinner-border {
