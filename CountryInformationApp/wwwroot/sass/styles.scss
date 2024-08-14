@@ -1,4 +1,3 @@
-
 @import '_variables.scss';
 
 html {
@@ -34,20 +33,37 @@ body {
 }
 
 
-.loading-overlay {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
+.countries-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    color: $light-gray;
+    align-items: center;
+
+    .country-select-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        .country-select-label {
+            margin-bottom: .5rem !important;
+        }
+    }
+
+    .loading-overlay {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        color: $light-gray;
+    }
+
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+        border-width: 0.4em;
+    }
 }
-
-.spinner-border {
-    width: 3rem;
-    height: 3rem;
-    border-width: 0.4em;
-}
-
-

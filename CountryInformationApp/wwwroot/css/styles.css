@@ -27,7 +27,23 @@ body .nav-link {
   font-weight: bold;
 }
 
-.loading-overlay {
+.countries-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.countries-container .country-select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.countries-container .country-select-container .country-select-label {
+  margin-bottom: 0.5rem !important;
+}
+.countries-container .loading-overlay {
   top: 0;
   left: 0;
   width: 100%;
@@ -36,8 +52,7 @@ body .nav-link {
   justify-content: center;
   color: #d3d3d3;
 }
-
-.spinner-border {
+.countries-container .spinner-border {
   width: 3rem;
   height: 3rem;
   border-width: 0.4em;

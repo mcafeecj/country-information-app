@@ -5,20 +5,32 @@
 }
 
 <div id="countries-page">
-    <div class="text-center">
+    <div class="page-title text-center">
         <h1 class="display-4">Countries</h1>
     </div>
 
-    <p>TODO: Display country select dropdown</p>
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+    @* Select Dropdown *@
+    <div class="countries-container">        
+        <div class="country-select-container">
+            @* Loading Overlay *@
+            <div id="loading-overlay" class="loading-overlay">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div id="countries-list"></div>
 
-    <p>TODO: Display country information based on the selected country</p>
+
+            <label class="country-select-label">Select A Country</label>
+            <select id="country-select" class="form-select">
+                <option value="">Select a country</option>
+            </select>
+        </div>
+        @* Country Info Card *@
+        <div id="country-info-container"></div>
+    </div>
+
+
 </div>
 
