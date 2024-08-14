@@ -26,7 +26,25 @@ body .nav-link {
   color: white !important;
   font-weight: bold;
 }
+body .linkedin-link {
+  display: flex;
+  justify-content: end;
+}
+body .countries-nav-link {
+  color: #1976d2;
+  font-weight: bold;
+}
+body .country-information-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .country-information-img p.click-img-prompt {
+  margin-bottom: 1rem;
+}
 
+/*Countries Page*/
 .countries-container {
   display: flex;
   flex-direction: column;

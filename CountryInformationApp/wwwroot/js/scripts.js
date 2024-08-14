@@ -20,15 +20,7 @@ function fetchCountries() {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             countries = yield response.json();
-            countries.sort((a, b) => {
-                const nameA = a.name.common.toLowerCase();
-                const nameB = b.name.common.toLowerCase();
-                if (nameA < nameB)
-                    return -1;
-                if (nameA > nameB)
-                    return 1;
-                return 0;
-            });
+            sortCountriesAsc(countries);
             updateCountrySelect(countries);
         }
         catch (error) {
@@ -37,6 +29,17 @@ function fetchCountries() {
         finally {
             toggleLoadingOverlay(false);
         }
+    });
+}
+function sortCountriesAsc(countries) {
+    return countries.sort((a, b) => {
+        const nameA = a.name.common.toLowerCase();
+        const nameB = b.name.common.toLowerCase();
+        if (nameA < nameB)
+            return -1;
+        if (nameA > nameB)
+            return 1;
+        return 0;
     });
 }
 function updateCountrySelect(countries) {
@@ -50,7 +53,7 @@ function updateCountrySelect(countries) {
         });
     }
     else {
-        console.error('The select element with ID "country-select" was not found.');
+        console.error('Error updating the dropdown menu.');
     }
 }
 function toggleLoadingOverlay(show) {
@@ -60,35 +63,37 @@ function toggleLoadingOverlay(show) {
     }
 }
 function displayCountryInformation(country) {
+    var _a, _b;
     const countryInfoDiv = document.getElementById('country-info-container');
-    if (countryInfoDiv) {
-        if (country === null) {
-            countryInfoDiv.style.display = 'none';
-            return;
-        }
-        countryInfoDiv.style.display = 'block';
-        const flag = country.flags.svg || country.flags.png; // Use SVG or PNG flag if available
-        countryInfoDiv.innerHTML =
-            `   <div class="card" style="width: 18rem;">
-                <img src="${flag}" class="card-img-top" alt="${country.name.common} flag">
-                <div class="card-body">
-                    <h3 class="card-title country-title">${country.name.common}</h3>
-                    <p class="population"><strong>Population:</strong> ${country.population.toLocaleString()}</p>
-                    <p class="continent"><strong>Continent:</strong> ${country.continents ? country.continents[0] : 'N/A'}</p>
-                    <p class="capital"><strong>Capital:</strong> ${country.capital ? country.capital[0] : 'N/A'}</p>
-                </div>
-            </div>
-        `;
+    if (!countryInfoDiv)
+        return;
+    if (!country) {
+        countryInfoDiv.style.display = 'none';
+        return;
     }
+    countryInfoDiv.style.display = 'flex';
+    const { name, population, continents, capital, flags } = country;
+    const flagImg = flags.svg || flags.png;
+    const flagDescription = flags.alt || name.common;
+    const countryCard = `
+        <div class="card" style="width: 18rem;">
+            <img src="${flagImg}" class="card-img-top" alt="${flagDescription} flag">
+            <div class="card-body">
+                <h3 class="card-title country-title">${name.common}</h3>
+                <p class="population"><strong>Population:</strong> ${population.toLocaleString()}</p>
+                <p class="continent"><strong>Continent:</strong> ${(_a = continents === null || continents === void 0 ? void 0 : continents[0]) !== null && _a !== void 0 ? _a : 'N/A'}</p>
+                <p class="capital"><strong>Capital:</strong> ${(_b = capital === null || capital === void 0 ? void 0 : capital[0]) !== null && _b !== void 0 ? _b : 'N/A'}</p>
+            </div>
+        </div>
+    `;
+    countryInfoDiv.innerHTML = countryCard;
 }
 (_a = document.getElementById('country-select')) === null || _a === void 0 ? void 0 : _a.addEventListener('change', (event) => {
     const selectedCountryName = event.target.value;
     if (selectedCountryName !== "") {
-        console.log(selectedCountryName);
         const selectedCountry = countries.find(country => country.name.common === selectedCountryName);
-        console.log('selectedCountry', selectedCountry);
         if (selectedCountry) {
-            displayCountryInformation(selectedCountry); // Display country information below the dropdown
+            displayCountryInformation(selectedCountry);
         }
     }
     else

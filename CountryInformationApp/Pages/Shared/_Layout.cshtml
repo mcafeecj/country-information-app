@@ -5,27 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CountryInformation - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="icon" type="image/png" href="~/images/earth-globe-icon.png" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CountryInformationApp.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-@*              <a class="navbar-brand" asp-area="" asp-page="/Index">Country Information</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Navbar Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button> *@
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Countries">Countries</a>
-                        </li>
-                    </ul>
+                </button>
+
+                <!-- Navbar Content -->
+                <div id="navbarNav" class="collapse navbar-collapse">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between">
+                            <!-- Navbar Links (Left) -->
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-page="/Countries">Country Information</a>
+                                </li>
+                            </ul>
+
+                            <!-- LinkedIn Link (Right) -->
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/chris-mcafee/">Chris McAfee LinkedIn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -45,7 +59,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/scripts.js" asp-append-version="true"></script>
-   
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

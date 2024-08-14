@@ -30,9 +30,30 @@ body {
         color: white !important;
         font-weight: bold;
     }
+
+    .linkedin-link {
+        display: flex;
+        justify-content: end;
+    }
+
+    .countries-nav-link {
+        color: $primary;
+        font-weight: bold;
+    }
+
+    .country-information-img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p.click-img-prompt {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
-
+/*Countries Page*/
 .countries-container {
     display: flex;
     flex-direction: column;
