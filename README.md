@@ -5,7 +5,6 @@ With the Paris 2024 Olympics still fresh on our minds, the CountryInformationApp
 
 ## Features
 - Responsive design using Bootstrap
-- Custom Bootstrap components
 - API integration with country information
 - Dynamic display of country data
 

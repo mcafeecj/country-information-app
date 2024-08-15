@@ -13,7 +13,7 @@ namespace CountryInformationApp.Pages
 		}
 
 		[BindProperty]
-		public string Project {  get; set; }
+		public string? Project {  get; set; }
 
 		public void OnGet()
 		{
