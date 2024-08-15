@@ -15,7 +15,7 @@ function fetchCountries() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             toggleLoadingOverlay(true);
-            const response = yield fetch('https://restcountries.com/v3.1/all'); // Get all Countries
+            const response = yield fetch('https://restcountries.com/v3.1/all');
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }

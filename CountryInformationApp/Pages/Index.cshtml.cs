@@ -12,9 +12,15 @@ namespace CountryInformationApp.Pages
 			_logger = logger;
 		}
 
+		[BindProperty]
+		public string Project {  get; set; }
+
 		public void OnGet()
 		{
-
+			if (string.IsNullOrWhiteSpace(Project))
+			{
+				Project = "Technical Task";
+			}
 		}
 	}
 }

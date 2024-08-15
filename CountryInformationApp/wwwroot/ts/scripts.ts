@@ -1,11 +1,11 @@
-let isLoading = false;
+let isLoading: boolean = false;
 let countries: Country[] = [];
 
 async function fetchCountries() {
     try {
         toggleLoadingOverlay(true);
 
-        const response = await fetch('https://restcountries.com/v3.1/all'); // Get all Countries
+        const response = await fetch('https://restcountries.com/v3.1/all');
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
